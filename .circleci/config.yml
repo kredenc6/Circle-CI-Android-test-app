@@ -6,8 +6,11 @@ orbs:
 jobs:
   build:
     executor: android/android
-        
+
     steps:
       - checkout
+      - run:
+         name: chmod permissions
+          command: chmod +x ./gradlew
       - run:
           command: ./gradlew build
